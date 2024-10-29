@@ -5,32 +5,34 @@
  */
 
 // @lc code=start
+
+import java.util.Stack;
+
 class Solution {
     public String reverseWords(String s) {
-        // String[] arr =s.split(" ");
-        // String ans="";
-        // for (int i = arr.length-1; i>=0; i--) {
-        //     ans+= arr[i];
-        //     if (i!=0) {
-        //         ans+=" ";
-                
-        //     }
+         
+        String[] str = s.split(" ");
+        Stack<String> stack = new Stack<>();
 
-
-            
-        // }
-        // return ans;
-        String[] words = s.split("\\s+");
-        StringBuilder res = new StringBuilder();
-
-        for (int i = words.length - 1; i >= 0; i--) {
-            res.append(words[i]);
-            if (i != 0) {
-                res.append(" ");
+        for (String word : str) {
+            if (!word.isEmpty()) { 
+                stack.push(word);
             }
         }
+        
+     
+        StringBuilder sb = new StringBuilder();
+        
+        while (!stack.isEmpty()) {
+            sb.append(stack.pop());
+            if (!stack.isEmpty()) { 
+                sb.append(" ");
+            }
+        }
+        
+        return sb.toString();
 
-        return res.toString().trim();
+       
         
     }
 }

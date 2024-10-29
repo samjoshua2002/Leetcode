@@ -10,7 +10,7 @@ class Solution {
         String[] a = sentence1.split(" ");
         String[] b = sentence2.split(" ");
         
-        // Ensure `a` is always the longer sentence or same length
+       
         if (a.length < b.length) {
             String[] temp = a;
             a = b;
@@ -20,7 +20,7 @@ class Solution {
         int start = 0;
         int end = 0;
         
-        // Check prefix match
+       
         while (start < b.length && a[start].equals(b[start])) {
             start++;
         }
