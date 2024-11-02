@@ -23,8 +23,8 @@ class Solution {
         while (curr!=null) {
             next = curr.next;
             curr.next= previous;
-            if (next == null) break;
             previous= curr;
+            if (next == null) break;
             curr= next;
             
         }
