@@ -15,7 +15,7 @@ class Solution {
       long ans = 0;
       int MAX = Integer.MAX_VALUE, MIN = Integer.MIN_VALUE;
 
-      // Check the first character for a sign
+     
       int i = 0;
       if (s.charAt(0) == '-') {
           sign = -1;
@@ -24,7 +24,7 @@ class Solution {
           i++;
       }
 
-      // Parse digits and build the number
+     
       while (i < s.length() && Character.isDigit(s.charAt(i))) {
           ans = ans * 10 + (s.charAt(i) - '0');
           if (sign == -1 && -ans < MIN) return MIN;
