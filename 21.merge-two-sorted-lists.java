@@ -24,6 +24,7 @@ class Solution {
        ListNode c = d;
        while (list1!=null && list2!=null) {
         if (list1.val> list2.val) {
+
             c.next = list2;
             list2= list2.next;
 
@@ -35,11 +36,18 @@ class Solution {
         }
         c=c.next;
         
+        
        }
-       if (list1!=null) {
+       if (list1==null) {
+        c.next =list2;
+        
+       }
+       if (list2==null) {
         c.next =list1;
         
-       }else c.next = list2;
+       }
+
+       
 
 
        return d.next;
